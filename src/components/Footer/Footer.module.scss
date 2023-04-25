@@ -1,0 +1,59 @@
+.Footer {
+  background-color: #e2e2e2;
+  padding: 20px 0;
+  font-family: 'Roboto', sans-serif;
+  color: black;
+  .Logos {
+    .Item {
+      .ImageContainer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        img {
+          margin: 10px;
+        }
+      }
+      h4 {
+        font-size: 22px;
+        text-align: center;
+        margin: 40px 0 10px 0;
+      }
+    }
+  }
+  .TermsAndConditions {
+    width: 100%;
+    h4 {
+      font-size: 22px;
+      text-align: center;
+      margin: 40px 0 10px 0;
+    }
+    p {
+      text-align: center;
+      margin: 5px 0;
+      a {
+        color: #0000EE;
+      }
+    }
+  }
+}
+
+@media only screen and (min-width: 576px) {
+  .Footer {
+    .Logos {
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      .Item {
+        margin: 0 30px;
+        width: 50%;
+        .ImageContainer {
+          width: 100%;
+          display: flex;
+          flex-direction: row;
+          min-height: 100px;
+        }
+      }
+    }
+  }
+}

@@ -1,8 +1,7 @@
 import Link from 'next/link';
 import Head from 'next/head';
 import { URL } from '../../constants';
-import favicon from '../../assets/favicon.ico';
-import styles from '@/styles/Header.module.css';
+import styles from './Header.module.scss';
 
 export const Header = () => {
   return (
@@ -16,7 +15,7 @@ export const Header = () => {
         <ul>
           <Link href={URL.home}>Home</Link>
           <Link href={URL.information}>Info</Link>
-          <Link href={URL.certification}>Certification</Link>
+          <Link href={URL.registry}>Registry Search</Link>
           <Link href={URL.register}>Register</Link>
           <Link href={URL.validate}>Validate</Link>
         </ul>
