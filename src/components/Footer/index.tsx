@@ -7,7 +7,7 @@ import mastercard from '@/assets/mastercard.png';
 import paypal from '@/assets/paypal.webp';
 import trustwave from '@/assets/trustwave.png';
 import visa from '@/assets/visa.svg';
-import styles from '@/styles/Footer.module.css';
+import styles from './Footer.module.scss';
 
 export const Footer = () => {
   return (
@@ -65,6 +65,17 @@ export const Footer = () => {
               width={60}
               height={40}
             />
+          </div>
+        </div>
+        {/* FAQS */}
+        <div className={styles.Item}>
+          <h4>Utils Links</h4>
+          <div className={styles.ImageContainer}>
+            <ul>
+              <li>Shop</li>
+              <li>FAQS</li>
+              <li>Contact</li>
+            </ul>
           </div>
         </div>
       </div>
