@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import Head from 'next/head';
-import { URL } from '../../constants';
+import { URL, TITLES } from '../../constants';
 import styles from './Header.module.scss';
 
 export const Header = () => {
@@ -13,11 +13,11 @@ export const Header = () => {
       </Head>
       <nav className={styles.nav}>
         <ul>
-          <Link href={URL.home}>Home</Link>
-          <Link href={URL.information}>Info</Link>
-          <Link href={URL.registry}>Registry Search</Link>
-          <Link href={URL.register}>Register</Link>
-          <Link href={URL.validate}>Validate</Link>
+          <Link href={URL.home}>{TITLES.home}</Link>
+          <Link href={URL.shop}>{TITLES.shop}</Link>
+          <Link href={URL.information}>{TITLES.information}</Link>
+          <Link href={URL.registry}>{TITLES.registry}</Link>
+          <Link href={URL.validate}>{TITLES.validate}</Link>
         </ul>
       </nav>
     </>

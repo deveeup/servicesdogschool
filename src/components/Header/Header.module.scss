@@ -2,11 +2,34 @@
   align-items: center;
   display: flex;
   justify-content: center;
-  padding: 20px 0;
-  background: #540b13;
+  background: #3c0c24;
   font-family: 'Roboto', sans-serif;
+  ul {
+    padding: 10px 0;
+    max-width: 1024px;
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
   a {
+    flex-wrap: nowrap;
     color: white;
     padding: 10px;
+    border-radius: 25px;
+    &:hover {
+      background-color: #9e052b;
+    }
+    &:active {
+      transform: scale(.9);
+      transition: .2s;
+    }
   }
 }
+/*
+  #3c0c24
+  #9e052b
+  #0892ff
+  #e0ebf6
+  #fffbf4
+*/
