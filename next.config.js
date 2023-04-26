@@ -8,4 +8,7 @@ module.exports = {
     appId: "1:933293615596:web:6b033afba1be4fce2d78c9",
     measurementId: "G-18CTMR2ZMQ",
   },
+  images: {
+    domains: ["firebasestorage.googleapis.com"],
+  },
 };

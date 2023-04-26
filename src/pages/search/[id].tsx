@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 import { Layout } from '@/components/Layout';
 import { Loader } from '../../components/Loader';
 import { NotFound } from '../../components/NotFound';
-import styles from '@/styles/Home.module.css'
+import { PetResults } from '../../components/PetResults';
 
 interface IDog {
   age?: string;
@@ -54,20 +54,7 @@ export default function Registry() {
       {
         !pet.findPet
           ? <NotFound />
-          : (
-          <>
-            <img src={pet.image} alt="" />
-            <p>
-              name: {pet.name}
-              <br />
-              owner: {pet.owner}
-              <br />
-              weight: {pet.weight}
-              <br />
-              state: {pet.registerState}
-            </p>
-          </>
-        )
+          : <PetResults pet={pet} />
       }
     </Layout>
   )
