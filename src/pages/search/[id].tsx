@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Layout } from '@/components/Layout';
+import { Loader } from '../../components/Loader';
 import styles from '@/styles/Home.module.css'
 
 interface IDog {
@@ -41,7 +42,11 @@ export default function Registry() {
   }, []);
 
   if (pet.loading) {
-    return <span>Loading</span>
+    return (
+      <Layout>
+        <Loader />
+      </Layout>
+    );
   }
   return (
     <Layout>
@@ -49,7 +54,7 @@ export default function Registry() {
         <div className={styles.center}>
           {
             !pet.findPet
-              ? <h1>NOT FOUND</h1>
+              ? <h1>NotFound</h1>
               : (
               <>
                 <img src={pet.image} alt="" />

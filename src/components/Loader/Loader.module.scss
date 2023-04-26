@@ -1,0 +1,13 @@
+.loaderContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  height: 100vh;
+  span {
+    margin: 20px auto;
+    color: #3c0c24;
+    font-weight: bold;
+  }
+}
