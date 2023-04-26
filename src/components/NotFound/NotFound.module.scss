@@ -1,0 +1,41 @@
+.NotFoundContainer {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Roboto', sans-serif;
+  justify-content: center;
+  margin: 0 auto;
+  max-width: 768px;
+  padding: 100px 0;
+  .popUp {
+    background-color: #9e052b;
+    border-radius: 5px;
+    color: #e0ebf6;
+    padding: 15px 20px;
+  }
+  .infoContainer {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    h4 {
+      font-size: 20px;
+      margin: 5px auto 10px auto;
+    }
+  }
+  a {
+    background-color: #0892ff;
+    border-radius: 15px;
+    border: none;
+    color: #fffbf4;
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: bold;
+    margin: 20px auto;
+    padding: 10px 25px;
+    &:active {
+      transform: scale(.9);
+      transition: .2s;
+    }
+  }
+}
