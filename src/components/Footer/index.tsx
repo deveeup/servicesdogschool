@@ -87,10 +87,14 @@ export const Footer = () => {
           About us
         </h4>
         <p>
-          © 2023 Services Dog School. All Rights Reserved
+          © 2023 Services Dog School.
+          <br />
+          All Rights Reserved
           <br />
           <br />
-          For more information please contact: <a href="tel:+17862921416">+1 (786) 292 1416</a>
+          For more information please contact:
+          <br />
+          <a href="tel:+17862921416">+1 (786) 292 1416</a>
           <br />
           <br />
           <Link href="">Terms & conditions</Link> | <Link href="">Privacy policy</Link>

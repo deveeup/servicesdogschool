@@ -23,7 +23,6 @@ export default function Validate() {
             <p>
               <b>Verify Animal Registration</b>
               <br />
-              <br />
               Services Dog School is the nation's largest Support Animal registry.
               Enter your registration number (found on your animal's ID, begins with either ES- or SA-)
               below to verify your animal's registration information.
@@ -36,6 +35,11 @@ export default function Validate() {
             <input type="text" placeholder='Enter your ID' onChange={(e) => setId(e.target.value)} />
             <Link href={`/search/${id}`}>Verify</Link>
           </div>
+          <p>
+            If you can't find your certificate, please contact us.
+            <br />
+            <a href="mailto:support@servicesdogschool.com">support@servicesdogschool.com</a>
+          </p>
         </div>
       </main>
     </Layout>

@@ -1,18 +1,16 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Layout } from '@/components/Layout';
-import styles from '@/styles/Home.module.css'
+import { DogResponse } from './interface';
 
-
-export default function Registry() {
+export default function Search() {
   const {
     query: { id }
   } = useRouter();
 
-  const [pet, setPet] = useState({
-    findPet: false,
-    name: '',
+  const [pet, setPet] = useState<DogResponse>({
     loading: true,
+    findPet: false,
   });
 
   useEffect(() => {
@@ -29,12 +27,25 @@ export default function Registry() {
   }
   return (
     <Layout>
-      <main className={styles.main}>
-        <div className={styles.center}>
+      <main>
+        <div>
           {
             !pet.findPet
               ? <h1>NOT FOUND</h1>
-              : <h1>THE ID IS {pet.name}</h1>
+              : (
+                <>
+                  <img src={pet.image} alt="" />
+                  <p>
+                    name: {pet.name}
+                    <br />
+                    owner: {pet.owner}
+                    <br />
+                    weight: {pet.weight}
+                    <br />
+                    state: {pet.registerState}
+                  </p>
+                </>
+              )
           }
 
         </div>
