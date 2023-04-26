@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Layout } from '@/components/Layout';
+import { IDog } from './interface';
 import styles from '@/styles/Home.module.css'
 
 
@@ -9,9 +10,8 @@ export default function Registry() {
     query: { id }
   } = useRouter();
 
-  const [pet, setPet] = useState({
+  const [pet, setPet] = useState<IDog>({
     findPet: false,
-    name: '',
     loading: true,
   });
 
@@ -34,9 +34,21 @@ export default function Registry() {
           {
             !pet.findPet
               ? <h1>NOT FOUND</h1>
-              : <h1>THE ID IS {pet.name}</h1>
+              : (
+              <>
+                <img src={pet.image} alt="" />
+                <p>
+                  name: {pet.name}
+                  <br />
+                  owner: {pet.owner}
+                  <br />
+                  weight: {pet.weight}
+                  <br />
+                  state: {pet.registerState}
+                </p>
+              </>
+            )
           }
-
         </div>
       </main>
     </Layout>
