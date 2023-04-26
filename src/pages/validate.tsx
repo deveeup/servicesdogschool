@@ -1,15 +1,17 @@
-import Image from 'next/image'
+import { useState } from 'react';
+import Image from 'next/image';
+import Link from 'next/link';
 import { Layout } from '@/components/Layout';
 import DogValidate from '@/assets/dog-validate.jpg';
 import styles from '@/styles/Validate.module.scss';
 
 
 export default function Validate() {
+  const [id, setId] = useState<any>('');
   return (
     <Layout>
       <main className={styles.validate}>
         <h2>Registration Verification</h2>
-        <h4>Verify Animal Registration</h4>
         <div className={styles.container}>
           <div className={styles.information}>
             <Image
@@ -19,6 +21,9 @@ export default function Validate() {
               height={200}
             />
             <p>
+              <b>Verify Animal Registration</b>
+              <br />
+              <br />
               Services Dog School is the nation's largest Support Animal registry.
               Enter your registration number (found on your animal's ID, begins with either ES- or SA-)
               below to verify your animal's registration information.
@@ -28,8 +33,8 @@ export default function Validate() {
           </div>
           <div className={styles.inputContainer}>
             <span>Verify Registration</span>
-            <input type="text" placeholder='Enter your ID' />
-            <button>Verify</button>
+            <input type="text" placeholder='Enter your ID' onChange={(e) => setId(e.target.value)} />
+            <Link href={`/search/${id}`}>Verify</Link>
           </div>
         </div>
       </main>
