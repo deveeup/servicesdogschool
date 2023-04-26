@@ -3,15 +3,31 @@ import { useEffect, useState } from 'react';
 import { Layout } from '@/components/Layout';
 import styles from '@/styles/Home.module.css'
 
+interface IDog {
+  age?: string;
+  animalType?: string;
+  birthdate?: string;
+  breed?: string;
+  expirationDate?: string;
+  findPet: boolean;
+  id?: string;
+  image?: string;
+  loading: boolean;
+  name?: string;
+  owner?: string;
+  registerDate?: string;
+  registerState?: string;
+  species?: string;
+  weight?: string;
+}
 
 export default function Registry() {
   const {
     query: { id }
   } = useRouter();
 
-  const [pet, setPet] = useState({
+  const [pet, setPet] = useState<IDog>({
     findPet: false,
-    name: '',
     loading: true,
   });
 
@@ -34,9 +50,21 @@ export default function Registry() {
           {
             !pet.findPet
               ? <h1>NOT FOUND</h1>
-              : <h1>THE ID IS {pet.name}</h1>
+              : (
+              <>
+                <img src={pet.image} alt="" />
+                <p>
+                  name: {pet.name}
+                  <br />
+                  owner: {pet.owner}
+                  <br />
+                  weight: {pet.weight}
+                  <br />
+                  state: {pet.registerState}
+                </p>
+              </>
+            )
           }
-
         </div>
       </main>
     </Layout>
