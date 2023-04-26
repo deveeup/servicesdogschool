@@ -9,7 +9,7 @@ export const PetResults = ({ pet }: any) => {
     <div className={styles.PetResultsContainer}>
       <h1>Registered Animal details</h1>
       <div className={styles.infoContainer}>
-        <p>Services Dogs School Registry</p>
+        <p>Services Dog School Registry</p>
         <div className={styles.tableContainer}>
           <Image
             src={pet.image}
