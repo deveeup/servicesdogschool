@@ -2,6 +2,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Layout } from '@/components/Layout';
 import { Loader } from '../../components/Loader';
+import { NotFound } from '../../components/NotFound';
 import styles from '@/styles/Home.module.css'
 
 interface IDog {
@@ -50,28 +51,24 @@ export default function Registry() {
   }
   return (
     <Layout>
-      <main className={styles.main}>
-        <div className={styles.center}>
-          {
-            !pet.findPet
-              ? <h1>NotFound</h1>
-              : (
-              <>
-                <img src={pet.image} alt="" />
-                <p>
-                  name: {pet.name}
-                  <br />
-                  owner: {pet.owner}
-                  <br />
-                  weight: {pet.weight}
-                  <br />
-                  state: {pet.registerState}
-                </p>
-              </>
-            )
-          }
-        </div>
-      </main>
+      {
+        !pet.findPet
+          ? <NotFound />
+          : (
+          <>
+            <img src={pet.image} alt="" />
+            <p>
+              name: {pet.name}
+              <br />
+              owner: {pet.owner}
+              <br />
+              weight: {pet.weight}
+              <br />
+              state: {pet.registerState}
+            </p>
+          </>
+        )
+      }
     </Layout>
   )
 }
