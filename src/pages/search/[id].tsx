@@ -1,9 +1,25 @@
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 import { Layout } from '@/components/Layout';
-import { IDog } from './interface';
 import styles from '@/styles/Home.module.css'
 
+interface IDog {
+  age?: string;
+  animalType?: string;
+  birthdate?: string;
+  breed?: string;
+  expirationDate?: string;
+  findPet: boolean;
+  id?: string;
+  image?: string;
+  loading: boolean;
+  name?: string;
+  owner?: string;
+  registerDate?: string;
+  registerState?: string;
+  species?: string;
+  weight?: string;
+}
 
 export default function Registry() {
   const {
