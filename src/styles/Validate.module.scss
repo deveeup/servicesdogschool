@@ -56,7 +56,10 @@
       justify-content: center;
       margin: 30px 0;
       width: 100%;
-
+      .disable {
+        pointer-events: none;
+        background-color: #e0ebf6;
+      }
       span {
         background: #9e052b;
         border-color: #9e052b;

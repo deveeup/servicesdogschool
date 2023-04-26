@@ -7,7 +7,7 @@ import styles from '@/styles/Validate.module.scss';
 
 
 export default function Validate() {
-  const [id, setId] = useState<any>('');
+  const [id, setId] = useState<string>('');
   return (
     <Layout>
       <main className={styles.validate}>
@@ -33,7 +33,12 @@ export default function Validate() {
           <div className={styles.inputContainer}>
             <span>Verify Registration</span>
             <input type="text" placeholder='Enter your ID' onChange={(e) => setId(e.target.value)} />
-            <Link href={`/search/${id}`}>Verify</Link>
+            <Link
+              href={`/search/${id}`}
+              className={id.length <= 0 ? styles.disable : ''}
+            >
+              Verify
+            </Link>
           </div>
           <p>
             If you can't find your certificate, please contact us.
