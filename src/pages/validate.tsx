@@ -32,7 +32,7 @@ export default function Validate() {
           </div>
           <div className={styles.inputContainer}>
             <span>Verify Registration</span>
-            <input type="text" placeholder='Enter your ID' onChange={(e) => setId(e.target.value)} />
+            <input type="text" placeholder='Enter your ID' onChange={(e) => setId(e.target.value.trim())} />
             <Link
               href={`/search/${id}`}
               className={id.length <= 0 ? styles.disable : ''}
