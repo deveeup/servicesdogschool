@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { URL, TITLES } from '../../constants';
 import amricanexpress from '@/assets/amricanexpress.png';
 import comodolock from '@/assets/comodolock.png';
 import iso from '@/assets/iso27001.png';
@@ -72,9 +73,15 @@ export const Footer = () => {
           <h4>Utils Links</h4>
           <div className={styles.ImageContainer}>
             <ul>
-              <li>Shop</li>
-              <li>FAQS</li>
-              <li>Contact</li>
+              <li>
+                <Link href={URL.shop}>{TITLES.shop}</Link>
+              </li>
+              <li>
+                <Link href={URL.registry}>{TITLES.registry}</Link>
+              </li>
+              <li>
+                <Link href={URL.validate}>{TITLES.validate}</Link>
+              </li>
             </ul>
           </div>
         </div>
