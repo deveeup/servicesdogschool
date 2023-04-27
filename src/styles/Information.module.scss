@@ -1,0 +1,36 @@
+.InformationContainer {
+  width: 90%;
+  margin: 30px auto;
+  border: 1px solid #9e052b;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 5px;
+  h1 {
+    background: #9e052b;
+    color: #fffbf4;
+    border-radius: 3px;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+  }
+  p {
+    padding: 20px;
+    text-align: justify;
+  }
+}
+@media only screen and (min-width: 576px) {
+  .InformationContainer {
+    max-width: 900px;
+    margin: 20px auto;
+    .infoContainer {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
+
+/*
+  #3c0c24
+  #9e052b
+  #0892ff
+  #e0ebf6
+  #fffbf4
+*/
