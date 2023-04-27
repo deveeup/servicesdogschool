@@ -1,0 +1,94 @@
+.RegistryContainer {
+  width: 90%;
+  margin: 30px auto;
+  border: 1px solid #9e052b;
+  font-family: 'Roboto', sans-serif;
+  border-radius: 5px;
+
+  h1 {
+    background: #9e052b;
+    color: #fffbf4;
+    border-radius: 3px;
+    padding: 10px 20px;
+    margin-bottom: 30px;
+  }
+  .infoContainer {
+    .loginContainer {
+      width: 90%;
+      margin: 20px auto;
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+      h3 {
+        text-align: center;
+      }
+      .item {
+        display: flex;
+        flex-direction: column;
+        margin: 10px 0;
+        input {
+          padding: 5px;
+          margin: 5px 0 0 0;
+        }
+      }
+      button {
+        background-color: #0892ff;
+        border-radius: 15px;
+        border: none;
+        color: #fffbf4;
+        cursor: pointer;
+        font-size: 18px;
+        font-weight: bold;
+        margin: 20px auto;
+        padding: 10px 25px;
+
+        &:active {
+          transform: scale(.9);
+          transition: .2s;
+        }
+      }
+      p {
+        font-size: 14px;
+        text-align: center;
+        padding: 20px;
+        a {
+          color: #0892ff;
+        }
+      }
+    }
+    .textsContainer {
+      padding: 20px;
+      p {
+        span {
+          background-color: #9e052b;
+          display: block;
+          text-align: center;
+          padding: 15px;
+          margin: 20px auto;
+          border-radius: 5px;
+          color: white;
+          font-size: 18px;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+@media only screen and (min-width: 576px) {
+  .RegistryContainer {
+    max-width: 900px;
+    margin: 20px auto;
+    .infoContainer {
+      display: flex;
+      flex-direction: row;
+    }
+  }
+}
+
+/*
+  #3c0c24
+  #9e052b
+  #0892ff
+  #e0ebf6
+  #fffbf4
+*/
