@@ -22,7 +22,7 @@ export default function Registry() {
             </div>
             <button>Login</button>
             <p>This module is exclusive for Trainers.
-              If you are Trainr and having problems with login, or similar issues,
+              If you are Trainer from this school and having problems with login, or similar issues,
               please contact to <a href="mailto:support@servicesdogschool.com">support@servicesdogschool.com</a>
             </p>
           </div>
