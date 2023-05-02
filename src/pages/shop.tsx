@@ -1,13 +1,16 @@
-import { Layout } from '@/components/Layout'
-import styles from '@/styles/Home.module.css'
-
+import { Layout } from '@/components/Layout';
+import { Item } from '@/components/Item';
+import styles from '@/styles/Shop.module.scss'
 
 export default function Shop() {
   return (
     <Layout>
-      <main className={styles.main}>
-        <div className={styles.center}>
-          <h1>Shop</h1>
+      <main className={styles.ShopContainer}>
+        <h1>SHOP!</h1>
+        <div className={styles.ItemsContainer}>
+          <Item />
+          <Item />
+          <Item />
         </div>
       </main>
     </Layout>
