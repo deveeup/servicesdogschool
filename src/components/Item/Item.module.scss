@@ -1,0 +1,70 @@
+.ItemContainer {
+  border: 1.5px solid #9e052b;
+  max-width: 200px;
+  overflow: hidden;
+  border-radius: 5px;
+  margin: 10px;
+  width: 44%;
+  min-height: 400px;
+  h4 {
+    padding: 5px;
+    text-align: center;
+  }
+  .Details {
+    padding: 0 10px;
+    p {
+      font-size: 14px;
+      font-style: italic;
+      padding: 8px 0;
+    }
+    .WithoutPromotion {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      span {
+        background-color: #9e052b;
+        color: white;
+        padding: 7px 0;
+        text-align: center;
+        margin: 10px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 25px;
+        width: 100%;
+      }
+    }
+    .WithPromotion {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      p {
+        text-decoration: line-through;
+        font-style: normal;
+        color: gray;
+      }
+      span {
+        background-color: #9e052b;
+        color: white;
+        padding: 7px 7px;
+        text-align: center;
+        margin: 0 auto 10px auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 25px;
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+/*
+  #3c0c24
+  #9e052b
+  #0892ff
+  #e0ebf6
+  #fffbf4
+*/
