@@ -3,7 +3,6 @@ import DogListen from '@/assets/dog-listen.jpg';
 import styles from './Item.module.scss';
 
 export const Item = ({ data }: any) => {
-  console.log(data)
   return (
     <div className={styles.ItemContainer}>
       <Image
