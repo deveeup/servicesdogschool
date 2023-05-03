@@ -53,7 +53,7 @@ export default function Information() {
           Once your pet is considered an emotional support animal he or she can stay with you at your residence even if they do not allow pets. While for some landlords, a registration may be acceptable, they can legally require that you have a Dr. Letter stating your need for an emotional support animal.
           <br/>
           <br/>
-          <hr />
+          <hr/>
           <br/>
           <br/>
           <b>Service Animals. Do I qualify for a service dog?</b>
