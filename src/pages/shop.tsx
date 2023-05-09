@@ -20,7 +20,7 @@ export default function Shop() {
     <Layout>
       <main className={styles.ShopContainer}>
         <h1>Shopping section</h1>
-        <p>
+        <p className={styles.TitleText}>
           - The products shown below are only sold through our trainers and partners.
           <br/>
           - We have 100% availability of the products shown.
@@ -32,7 +32,9 @@ export default function Shop() {
         <div className={styles.ItemsContainer}>
           {!products.length
             ? <Loader />
-            : products.map((data: any) => <Item key={data.id} data={data} />)
+            : products
+              .map((data: any) => <Item key={data.id} data={data} />)
+              .sort()
           }
         </div>
       </main>
