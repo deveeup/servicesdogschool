@@ -27,7 +27,6 @@ export default function Registry() {
   const {
     query: { id }
   } = useRouter();
-
   const [pet, setPet] = useState<IDog>({
     findPet: false,
     loading: true,
@@ -37,10 +36,10 @@ export default function Registry() {
     const fetchData = async () => {
       window.fetch(`/api/dog/${id}`)
         .then((res) => res.json())
-        .then(setPet);
+        .then(setPet)
     };
     fetchData();
-  }, []);
+  }, [pet.loading]);
 
   if (pet.loading) {
     return (
