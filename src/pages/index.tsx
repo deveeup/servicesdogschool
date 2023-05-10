@@ -30,7 +30,7 @@ export default function Home({ db }: any) {
               </li>
               <br/>
               <li>
-                Your service animal or emotional support animal will be placed in the official Services Dog Schoold Database.
+                Your service animal or emotional support animal will be placed in the official Services Dog School Database.
               </li>
               <br/>
               <li>
