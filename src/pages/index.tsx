@@ -45,7 +45,7 @@ export default function Home({ db }: any) {
               <br/>
               <li><b>Step #2:</b> Take the required course. In the process you find others courses and extra material, this isn't mandatory (mandatorys is only the course)</li>
               <br/>
-              <li><b>Step #3:</b> Your animal will be registered as an Emotional Support Animal (ESA) or Service Animal and placed in the Services Dog School Database.</li>
+              <li><b>Step #3:</b> Your animal will be registered as an Emotional Support Animal (ESA) or Service Animal (SA) and placed in the Services Dog School Database.</li>
               <br/>
               <li><b>Step #4:</b> Receive your Certificate & ID In The Mail Fast!
                 You will receive your ESA or Service Animal Registration Certificate and Photo ID by mail and in digital format (optional) to download for immediate use.
