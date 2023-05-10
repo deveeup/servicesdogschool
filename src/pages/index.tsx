@@ -4,7 +4,7 @@ import { Layout } from '@/components/Layout';
 import styles from '@/styles/Home.module.scss';
 
 export default function Home({ db }: any) {
-  return (
+  /* return (
     <Layout>
       <main className={styles.main}>
         <div className={styles.ImageContainer}>
@@ -59,5 +59,6 @@ export default function Home({ db }: any) {
         </div>
       </main>
     </Layout>
-  )
+  ) */
+  return <h1>404 NOT FOUND</h1>
 }
