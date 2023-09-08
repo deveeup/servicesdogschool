@@ -53,7 +53,8 @@ export default function NewPet() {
             e.preventDefault();
             newDoc(dogState)
               .then(() => {
-                document?.getElementById("dogForm")?.reset();
+                const form = document?.getElementById("dogForm") as any;
+                form?.reset();
                 setCreateButton(false);
                 setDogState(initialState);
               })
