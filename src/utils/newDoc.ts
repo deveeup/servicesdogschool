@@ -33,4 +33,6 @@ export const newDoc = ({
     registerState,
     species,
     weight,
-  });
+  })
+    .then(() => true)
+    .catch(() => false);

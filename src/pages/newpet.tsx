@@ -1,4 +1,3 @@
-import { useRouter } from "next/router";
 import { useEffect, useState } from 'react';
 import { Layout } from '@/components/Layout';
 import { newDoc } from "../utils/newDoc";
@@ -6,8 +5,8 @@ import { IDog } from "../utils/types/pet";
 import styles from '@/styles/NewPet.module.scss';
 
 export default function NewPet() {
-  const router = useRouter()
   const [newId, setNewId] = useState<string>("");
+  const [createButton, setCreateButton] = useState<boolean>(true);
   useEffect(() => {
     const fetchNewId = async () => {
       window.fetch(`/api/id`)
@@ -50,14 +49,16 @@ export default function NewPet() {
       <main className={styles.newPet}>
         <div className={styles.inputContainer}>
           <span>SA-{newId}</span>
-          <form onSubmit={(e) => {
+          <form id="dogForm" onSubmit={async (e) => {
             e.preventDefault();
-            try {
-              newDoc(dogState);
-              router.push("/");
-            } catch (e) {
-              console.error(e);
-            }
+            newDoc(dogState)
+              .then(() => {
+                document?.getElementById("dogForm")?.reset();
+                setCreateButton(false);
+                setDogState(initialState);
+              })
+              .catch((e) => console.error(e));
+
           }}>
             <div>
               <label htmlFor="age">Age</label>
@@ -95,9 +96,18 @@ export default function NewPet() {
               <label htmlFor="weight">Weight</label>
               <input type="text" id="weight" required name="weight" onChange={(e) => changeDogState({ weight: e.target.value })} />
             </div>
-            <button type="submit">Create</button>
+            <button
+              type="submit"
+              disabled={!createButton}
+              className={!createButton ? styles.disable : ""}
+            >
+              Create
+            </button>
           </form>
         </div>
+        {!createButton && (
+          <p>Create successfull...</p>
+        )}
       </main>
 
     </Layout>
