@@ -22,7 +22,18 @@
     justify-content: center;
     margin: 30px 0;
     width: 100%;
-
+    .disable {
+      background: rgba(gray, .7);
+      border-color: rgba(gray, .7);
+      color: white;
+      border: none;
+      &:hover {
+        cursor: null;
+      }
+    }
+    .enable {
+      background-color: #9e052b;
+    }
     span {
       background: #9e052b;
       border-color: #9e052b;
@@ -39,10 +50,23 @@
       justify-content: center;
       align-items: center;
       flex-wrap: wrap;
-      input {
-        margin: 20px;
-        padding: 10px;
-        font-size: 18px;
+      div {
+        width: 90%;
+        margin: 10px auto;
+        display: flex;
+        flex-direction: column;
+        label {
+          color: rgba(gray, .7);
+          text-transform: uppercase;
+          font-weight: bold;
+          font-size: 12px;
+        }
+        input {
+          margin: 0;
+          padding: 5px;
+          font-size: 18px;
+          width: 100%;
+        }
       }
       button {
         width: 60%;
@@ -54,9 +78,19 @@
         margin: 20px;
         padding: 10px;
         font-weight: bold;
+        &:hover {
+          cursor: pointer;
+        }
+        &:active {
+          transition: .5s;
+          transform: scale(.9);
+        }
       }
     }
-
+    p {
+      margin: 20px;
+      font-weight: bold;
+    }
     a {
       background-color: #0892ff;
       border-radius: 15px;
