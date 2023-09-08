@@ -59,15 +59,42 @@ export default function NewPet() {
               console.error(e);
             }
           }}>
-            <input type="text" required placeholder="Age" name="age" onChange={(e) => changeDogState({ age: e.target.value })} />
-            <input type="text" required placeholder="Birthdate" name="birthdate" onChange={(e) => changeDogState({ birthdate: e.target.value })} />
-            <input type="text" required placeholder="Breed" name="breed" onChange={(e) => changeDogState({ breed: e.target.value })} />
-            <input type="text" required placeholder="Microchip" name="microchip" onChange={(e) => changeDogState({ microchip: e.target.value })} />
-            <input type="text" required placeholder="Name" name="name" onChange={(e) => changeDogState({ name: e.target.value })} />
-            <input type="text" required placeholder="Owner" name="owner" onChange={(e) => changeDogState({ owner: e.target.value })} />
-            <input type="text" required placeholder="Password" name="password" onChange={(e) => changeDogState({ password: e.target.value })} />
-            <input type="text" required placeholder="Register State" name="registerState" onChange={(e) => changeDogState({ registerState: e.target.value })} />
-            <input type="text" required placeholder="Weight" name="weight" onChange={(e) => changeDogState({ weight: e.target.value })} />
+            <div>
+              <label htmlFor="age">Age</label>
+              <input type="text" id="age" required name="age" onChange={(e) => changeDogState({ age: e.target.value })} />
+            </div>
+            <div>
+              <label htmlFor="birthdate">Birthdate</label>
+              <input type="text" id="birthdate" required name="birthdate" onChange={(e) => changeDogState({ birthdate: e.target.value })} />
+            </div>
+            <div>
+              <label htmlFor="breed">Breed</label>
+              <input type="text" id="breed" required name="breed" onChange={(e) => changeDogState({ breed: e.target.value })} />
+            </div>
+            <div>
+              <label htmlFor="microchip">Microchip</label>
+              <input type="text" id="microchip" required name="microchip" onChange={(e) => changeDogState({ microchip: e.target.value })} />
+            </div>
+            <div>
+              <label htmlFor="name">Name</label>
+              <input type="text" id="name" required name="name" onChange={(e) => changeDogState({ name: e.target.value })} />
+            </div>
+            <div>
+              <label htmlFor="owner">Owner</label>
+              <input type="text" id="owner" required name="owner" onChange={(e) => changeDogState({ owner: e.target.value })} />
+            </div>
+            <div>
+              <label htmlFor="password">Password</label>
+              <input type="text" id="password" required name="password" onChange={(e) => changeDogState({ password: e.target.value })} />
+            </div>
+            <div>
+              <label htmlFor="registerState">Register State</label>
+              <input type="text" id="registerState" required name="registerState" onChange={(e) => changeDogState({ registerState: e.target.value })} />
+            </div>
+            <div>
+              <label htmlFor="weight">Weight</label>
+              <input type="text" id="weight" required name="weight" onChange={(e) => changeDogState({ weight: e.target.value })} />
+            </div>
             <button type="submit">Create</button>
           </form>
         </div>
