@@ -20,6 +20,7 @@ interface IDog {
   registerDate?: string;
   registerState?: string;
   species?: string;
+  teacher?: string;
   weight?: string;
 }
 

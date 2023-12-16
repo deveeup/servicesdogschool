@@ -87,6 +87,12 @@ export const PetResults = ({ pet }: any) => {
               <td>Registration number: </td>
               <td><b>{pet.id}</b></td>
             </tr>
+            {pet.teacher && (
+              <tr>
+                <td>Trained by: </td>
+                <td>{pet.teacher}</td>
+              </tr>
+            )}
             <tr>
               <td>Certificate: </td>
               <td>
