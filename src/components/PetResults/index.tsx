@@ -94,6 +94,21 @@ export const PetResults = ({ pet }: any) => {
               </tr>
             )}
             <tr>
+              <td>Training details: </td>
+              <td>
+                <div className={styles.PdfContainer}>
+                  <a
+                    href={pet.trainingCertificate}
+                    download={`${pet.id}-training-details`}
+                    target="_blank"
+                    type="application/octet-stream"
+                  >
+                    Download
+                  </a>
+                </div>
+              </td>
+            </tr>
+            <tr>
               <td>Certificate: </td>
               <td>
                 {!certificateAvailable ? (
