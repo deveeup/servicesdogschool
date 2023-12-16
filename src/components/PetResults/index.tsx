@@ -90,7 +90,7 @@ export const PetResults = ({ pet }: any) => {
             {pet.teacher && (
               <tr>
                 <td>Trained by: </td>
-                <td>{pet.teacher}</td>
+                <td dangerouslySetInnerHTML={{ __html: pet.teacher }} />
               </tr>
             )}
             <tr>
