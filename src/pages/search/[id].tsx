@@ -21,6 +21,7 @@ interface IDog {
   registerState?: string;
   species?: string;
   teacher?: string;
+  trainingCertificate?: string;
   weight?: string;
 }
 
