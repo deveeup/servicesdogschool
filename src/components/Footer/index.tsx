@@ -11,6 +11,8 @@ import visa from '@/assets/visa.svg';
 import styles from './Footer.module.scss';
 
 export const Footer = () => {
+  const year = new Date().getFullYear();
+
   return (
     <div className={styles.Footer}>
       <div className={styles.Logos}>
@@ -94,10 +96,7 @@ export const Footer = () => {
           About us
         </h4>
         <p>
-          © 2023 Services Dog School. All Rights Reserved
-          <br />
-          <br />
-          For more information please contact: <a href="tel:+17862921416">+1 (786) 292 1416</a>
+          © {year} Services Dog School. All Rights Reserved
           <br />
           <br />
           <Link href="">Terms & conditions</Link> | <Link href="">Privacy policy</Link>
