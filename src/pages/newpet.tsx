@@ -5,6 +5,7 @@ import DogValidate from '@/assets/dog-validate.jpg';
 import { newDoc } from "../utils/newDoc";
 import { IDog } from "../utils/types/pet";
 import styles from '@/styles/NewPet.module.scss';
+import { downloadCertificate } from '@/pdf/certificate';
 
 export default function NewPet() {
   const [newId, setNewId] = useState<string>("");
@@ -79,12 +80,14 @@ export default function NewPet() {
             <form id="dogForm" onSubmit={async (e) => {
               e.preventDefault();
               newDoc(dogState)
-                .then(() => {
+                .then(async () => {
                   const form = document?.getElementById("dogForm") as any;
                   form?.reset();
                   setCreateButton(false);
                   setDogState(initialState);
-                  setTimeout(() => location.reload(), 2000);
+                  const {id, name} = dogState;
+                  downloadCertificate(id, name);
+                  setTimeout(() => location.reload(), 3000);
                   ;
                 })
                 .catch((e) => console.error(e));
