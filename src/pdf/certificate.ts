@@ -1,6 +1,6 @@
 import PDF_SERVICE from "../constants/pdf_service.json";
 
-export const downloadCertificate = (id: string, name: string, day?: string, month?: string, year?: string) => {
+export const downloadCertificate = (id: string, name: string, day: string, month: string, year: string) => {
 
   fetch(`${PDF_SERVICE.URL}/certificate?id=${id}&name=${name}&day=${day}&month=${month}&year=${year}`, {
       method: 'GET',

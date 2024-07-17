@@ -1,4 +1,4 @@
-const months = [
+export const shortMonths = [
   '',
   'Jan',
   'Feb',
@@ -14,11 +14,10 @@ const months = [
   'Dec'
 ];
 
-export const formatDate = (date: string) => {
-  const splitDate = date.split('-');
+export const formatDay = (day: string) => {
   let formatDay: string = '';
 
-  switch (splitDate[2]) {
+  switch (day) {
     case '01':
       formatDay = '1st';
       break;
@@ -26,15 +25,24 @@ export const formatDate = (date: string) => {
       formatDay = '2nd';
       break;
     case '03':
-      formatDay = '3rn'
+      formatDay = '3rn';
       break;
     default:
-      formatDay = `${splitDate[2]}th`;
+      formatDay = `${day}th`;
   }
 
+  return formatDay;
+}
+
+
+export const formatDate = (date: string) => {
+  const splitDate = date.split('-');
+
+
+
   return {
-    day: formatDay,
-    month: months[Number(splitDate[1])],
+    day: formatDay(splitDate[2]),
+    month: shortMonths[Number(splitDate[1])],
     year: splitDate[0],
   }
 };
