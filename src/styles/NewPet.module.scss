@@ -104,6 +104,9 @@
           font-size: 18px;
           width: 100%;
         }
+        input[type="date"] {
+          color: rgba(gray, .7);
+        }
       }
       button {
         width: 60%;
