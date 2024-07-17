@@ -6,7 +6,7 @@ import { newDoc } from "../utils/newDoc";
 import { IDog } from "../utils/types/pet";
 import styles from '@/styles/NewPet.module.scss';
 import { downloadCertificate } from '@/pdf/certificate';
-import { formatDate } from '@/utils/formatDate';
+import { formatDate, shortMonths } from '@/utils/formatDate';
 
 export default function NewPet() {
   const [newId, setNewId] = useState<string>("");
@@ -26,9 +26,9 @@ export default function NewPet() {
     });
   }, [newId]);
 
-  const date = new Date();
+  const actualDate = new Date().toLocaleDateString();
+
   const initialState: IDog = {
-    age: "",
     animalType: "SA",
     birthdate: "",
     breed: "",
@@ -41,10 +41,8 @@ export default function NewPet() {
     name: "",
     owner: "",
     password: "",
-    registerDate: date.toLocaleDateString(),
+    registerDate: actualDate,
     registerState: "",
-    species: "Dog",
-    weight: "",
   };
   const [dogState, setDogState] = useState<IDog>(initialState);
   const changeDogState = (newValue: object) => {
@@ -91,15 +89,21 @@ export default function NewPet() {
 
                   const {id, name, registerDate} = dogState;
 
-                  let strDate: string | undefined = undefined;
-                  let strMonth: string | undefined = undefined;
-                  let strYear: string | undefined = undefined;
+                  let strDate: string  = '';
+                  let strMonth: string = '';
+                  let strYear: string = '';
 
-                  if (registerDate) {
+                  if (registerDate !== actualDate) {
                     const { day, month, year } = formatDate(registerDate);
                     strDate = day;
                     strMonth = month;
                     strYear = year;
+                  } else {
+                    const date = new Date();
+
+                    strDate = String(date.getDate());
+                    strMonth = shortMonths[date.getMonth() + 1];
+                    strYear = String(date.getFullYear());
                   }
 
                   downloadCertificate(id, name, strDate, strMonth, strYear);

@@ -1,5 +1,4 @@
 export interface IDog {
-  age: string;
   animalType: string;
   birthdate: string;
   breed: string;
@@ -12,8 +11,6 @@ export interface IDog {
   name: string;
   owner: string;
   password: string;
-  registerDate: string;
+  registerDate: any;
   registerState: string;
-  species: string;
-  weight: string;
 }
