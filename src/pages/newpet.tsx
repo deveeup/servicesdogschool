@@ -53,7 +53,7 @@ export default function NewPet() {
     });
   };
   const validatePassword = () => {
-    if(passwordPage === '728162') {
+    if (passwordPage === '728162') {
       return setRenderPage(true);
     }
     return;
@@ -88,9 +88,9 @@ export default function NewPet() {
                   setCreateButton(false);
                   setDogState(initialState);
 
-                  const {id, name, registerDate} = dogState;
+                  const { id, name, registerDate } = dogState;
 
-                  let strDate: string  = '';
+                  let strDate: string = '';
                   let strMonth: string = '';
                   let strYear: string = '';
 
@@ -105,11 +105,22 @@ export default function NewPet() {
                     strYear = String(actualDate.getFullYear());
                   }
 
-                  downloadCertificate(id, name, strDate, strMonth, strYear);
+                  try {
+                    console.log('Starting certificate download...');
+                    await downloadCertificate(id, name, strDate, strMonth, strYear);
+                    console.log('Certificate download initiated.');
+                  } catch (error) {
+                    console.error('Failed to download certificate:', error);
+                    alert('Failed to download certificate. Please contact support.');
+                  }
 
-                  setTimeout(() => location.reload(), 3000);
+                  // Reload after everything is done, give a small buffer for the user to see the success message/download start
+                  // setTimeout(() => location.reload(), 1000);
                 })
-                .catch((e) => console.error(e));
+                .catch((e) => {
+                  console.error('Error creating new doc:', e);
+                  setCreateButton(true); // Re-enable button on error
+                });
 
             }}>
               <div>
