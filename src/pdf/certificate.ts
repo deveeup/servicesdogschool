@@ -8,8 +8,19 @@ export const downloadCertificate = (id: string, name: string, day: string, month
     .then(response => response.blob())
     .then(blob => URL.createObjectURL(blob))
     .then(url => {
-      window.open(url, '_blank');
-      setTimeout(() => URL.revokeObjectURL(url), 1000);
+      const win = window.open('', '_blank');
+      if (win) {
+        win.document.write(`
+          <html>
+            <head><title>${id}-C</title></head>
+            <body style="margin:0; overflow:hidden;">
+              <iframe style="width:100%; height:100%; border:none;" src="${url}"></iframe>
+            </body>
+          </html>
+        `);
+      }
+      // Revoke the URL after a longer delay allowing the iframe to load
+      setTimeout(() => URL.revokeObjectURL(url), 5000);
     })
     .catch(err => {
       console.error("Error downloading certificate:", err);

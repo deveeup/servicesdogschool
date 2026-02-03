@@ -109,13 +109,12 @@ export default function NewPet() {
                     console.log('Starting certificate download...');
                     await downloadCertificate(id, name, strDate, strMonth, strYear);
                     console.log('Certificate download initiated.');
+
                   } catch (error) {
                     console.error('Failed to download certificate:', error);
                     alert('Failed to download certificate. Please contact support.');
                   }
-
-                  // Reload after everything is done, give a small buffer for the user to see the success message/download start
-                  // setTimeout(() => location.reload(), 1000);
+                  setTimeout(() => window.location.reload(), 2000);
                 })
                 .catch((e) => {
                   console.error('Error creating new doc:', e);
